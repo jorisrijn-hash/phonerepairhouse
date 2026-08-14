@@ -1246,6 +1246,9 @@ const NL2EN={
 "Tril functie reparatie":"Vibration repair","Software probleem":"Software issue","Trilfunctie":"Vibration",
 "Slecht / geen WiFi":"Poor / no wifi","Accu / batterij":"Battery",
 "Voor dit model geven we de prijs graag persoonlijk, omdat die per reparatie verschilt.":"For this model we prefer to give the price in person, as it varies per repair.",
+"Glas vervangen":"Glass replacement","LCD en glas vervangen":"LCD and glass replacement",
+"Scherm vervangen":"Screen replacement","Home button":"Home button","Audio jack":"Audio jack",
+"Slecht / geen wifi":"Poor / no wifi","Toestel onderzoeken":"Device inspection","Camera achter":"Rear camera","Camera voor":"Front camera",
 "Vraag het even via WhatsApp":"Just ask via WhatsApp",
 "Richtprijzen. De exacte prijs hoor je altijd voordat we aan je toestel beginnen. Staat jouw model er niet bij?":"Indicative prices. You always hear the exact price before we start on your phone. Model not listed?",
 "Prijzen per model":"Prices per model","Alle reparatieprijzen op een rij":"All repair prices at a glance",
@@ -1705,6 +1708,47 @@ const PRIJZEN_VOUW={
 };
 
 /* ============================================================
+   ECHTE PRIJZEN iPAD (aug 2026)
+   Per model benoemde velden, omdat de regels per generatie
+   verschillen (los glas, home button, audiojack).
+   ============================================================ */
+const PRIJZEN_IPAD={
+"iPad Pro 13 (2024)":{scherm:949,accu:285,laad:115,camVoor:135,camAchter:149,speaker:115,micro:99,aanuit:115,volume:115,tril:99,wifi:115,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Pro 12.9 (2022)":{scherm:369,accu:115,laad:99,camVoor:95,camAchter:125,speaker:125,micro:99,aanuit:99,volume:99,tril:95,wifi:99,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Pro 11 (2022)":{scherm:299,accu:149,laad:149,camVoor:89,camAchter:125,speaker:95,micro:89,aanuit:99,volume:99,tril:85,wifi:99,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Pro 12.9 (2021)":{scherm:369,accu:115,laad:99,camVoor:99,camAchter:125,speaker:129,micro:89,aanuit:95,volume:95,tril:89,wifi:95,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Pro 11 (2021)":{scherm:299,accu:109,laad:95,camVoor:99,camAchter:119,speaker:99,micro:89,aanuit:89,volume:89,tril:85,wifi:95,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Pro 12.9 (2020)":{scherm:279,accu:109,laad:89,camVoor:89,camAchter:119,speaker:119,micro:85,aanuit:85,volume:85,tril:85,wifi:95,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Pro 11 (2020)":{scherm:299,accu:99,laad:95,camVoor:89,camAchter:109,speaker:99,micro:85,aanuit:89,volume:89,tril:85,wifi:95,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Pro 12.9 (2018)":{scherm:279,accu:85,laad:69,camVoor:69,camAchter:85,speaker:95,micro:65,aanuit:65,volume:65,tril:65,wifi:69,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Pro 11 (2018)":{scherm:299,accu:85,laad:69,camVoor:85,camAchter:89,speaker:75,micro:65,aanuit:65,volume:65,tril:65,wifi:69,water:49,onderzoek:15,software:25,moederbord:135},
+
+"iPad Air 13 (2025)":{scherm:299,accu:199,laad:125,camVoor:125,camAchter:135,speaker:115,micro:99,aanuit:99,volume:99,tril:99,wifi:115,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Air 11 (2025)":{scherm:249,accu:199,laad:115,camVoor:125,camAchter:135,speaker:99,micro:99,aanuit:99,volume:99,tril:89,wifi:135,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Air 13 (2024)":{scherm:299,accu:115,laad:115,camVoor:115,camAchter:125,speaker:115,micro:99,aanuit:99,volume:99,tril:95,wifi:115,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Air 11 (2024)":{scherm:249,accu:115,laad:115,camVoor:115,camAchter:125,speaker:95,micro:95,aanuit:95,volume:95,tril:85,wifi:115,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Air 5 (2022)":{scherm:229,accu:115,laad:99,camVoor:99,camAchter:99,speaker:99,micro:95,aanuit:95,volume:95,tril:89,wifi:115,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Air 4":{scherm:229,accu:115,laad:85,camVoor:85,camAchter:95,speaker:85,micro:79,aanuit:85,volume:85,tril:79,wifi:99,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Air 3 (2019)":{scherm:229,accu:85,laad:75,home:65,camVoor:65,camAchter:99,speaker:75,micro:65,aanuit:75,volume:75,tril:65,audio:65,wifi:85,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Air 2":{scherm:149,accu:75,laad:65,home:59,camVoor:59,camAchter:75,speaker:65,micro:65,aanuit:65,volume:65,tril:65,audio:65,wifi:75,water:49,onderzoek:15,software:25,moederbord:135},
+
+"iPad A16 11 (2025)":{glas:139,lcdGlas:199,accu:199,laad:115,camVoor:89,camAchter:99,speaker:109,micro:89,aanuit:99,volume:99,tril:85,wifi:99,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad 2022":{glas:139,lcdGlas:189,accu:99,laad:89,camVoor:85,camAchter:99,speaker:95,micro:85,aanuit:89,volume:85,tril:85,wifi:95,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad 2021":{glas:119,lcdGlas:179,accu:95,laad:85,home:65,camVoor:79,camAchter:99,speaker:75,micro:75,aanuit:79,volume:79,tril:75,audio:69,wifi:75,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad 2020":{glas:109,lcdGlas:179,accu:85,laad:79,home:65,camVoor:69,camAchter:99,speaker:75,micro:75,aanuit:75,volume:75,tril:69,audio:69,wifi:75,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad 2019":{glas:99,lcdGlas:179,accu:85,laad:75,home:65,camVoor:65,camAchter:99,speaker:75,micro:75,aanuit:75,volume:75,tril:65,audio:65,wifi:75,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad 2018":{glas:89,lcdGlas:149,accu:79,laad:65,home:55,camVoor:59,camAchter:95,speaker:65,micro:65,aanuit:65,volume:65,tril:65,audio:65,wifi:75,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad 4":{glas:69,lcdGlas:99,accu:75,laad:59,home:59,camVoor:59,camAchter:65,speaker:59,micro:59,aanuit:59,volume:59,tril:59,audio:59,wifi:65,water:49,onderzoek:15,software:25,moederbord:135},
+
+"iPad Mini 7 (2024)":{scherm:329,accu:195,laad:105,camVoor:95,camAchter:95,speaker:105,micro:89,aanuit:99,volume:99,tril:89,wifi:99,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Mini 6 (2021)":{scherm:329,accu:115,laad:99,camVoor:89,camAchter:89,speaker:99,micro:89,aanuit:99,volume:85,tril:85,wifi:99,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Mini 5":{scherm:179,accu:75,laad:75,home:69,camVoor:69,camAchter:95,speaker:69,micro:69,aanuit:65,volume:65,tril:65,audio:65,wifi:75,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Mini 4":{scherm:169,accu:69,laad:69,home:69,camVoor:49,camAchter:49,speaker:49,micro:65,aanuit:59,volume:59,tril:59,audio:65,wifi:69,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Mini 3":{glas:79,lcdGlas:99,accu:69,laad:65,home:45,camVoor:45,camAchter:49,speaker:49,micro:45,aanuit:49,volume:49,tril:45,audio:49,wifi:49,water:49,onderzoek:15,software:25,moederbord:135},
+"iPad Mini 2":{glas:79,lcdGlas:99,accu:69,laad:65,home:45,camVoor:39,camAchter:49,speaker:49,micro:39,aanuit:49,volume:49,tril:49,audio:49,wifi:49,water:49,onderzoek:15,software:25,moederbord:135}
+};
+
+/* ============================================================
    CATALOGUS: merk, dan serie, dan model.
    Series zonder eigen prijslijst staan op 'aanvraag' totdat de
    tarieven zijn ingevoerd. Ze blijven wel gewoon kiesbaar.
@@ -1712,7 +1756,7 @@ const PRIJZEN_VOUW={
 const CATALOGUS=[
  {id:'apple',naam:'Apple',icon:I.apple,series:[
    {id:'iphone',naam:'iPhone',bron:'iphone',modellen:Object.keys(PRIJZEN_IPHONE)},
-   {id:'ipad',naam:'iPad',bron:null,modellen:['iPad Pro','iPad Air','iPad','iPad mini']},
+   {id:'ipad',naam:'iPad',bron:'ipad',modellen:Object.keys(PRIJZEN_IPAD)},
    {id:'watch',naam:'Apple Watch',bron:null,modellen:['Apple Watch Ultra','Apple Watch Series','Apple Watch SE']}
  ]},
  {id:'samsung',naam:'Samsung',icon:I.samsung,series:[
@@ -1780,7 +1824,7 @@ function prodArt(c){return `<div class="prod-img" style="background:linear-gradi
    PAGE TEMPLATES
    ============================================================ */
 /* ---- Reparatiekiezer: merk, model, klacht, richtprijs ---- */
-function modelSlug(m){return m.toLowerCase().replace(/ /g,'-').replace(/\./g,'');}
+function modelSlug(m){return m.toLowerCase().replace(/ /g,'-').replace(/[.()]/g,'');}
 function kiezerBlok(){
   return `<div class="checker" id="checker">
     <div class="checker-head">
@@ -1848,7 +1892,7 @@ function kiezerRender(){
   if(!kiezer.model){
     titel.textContent='Welk model?';
     sub.textContent=merk.naam+' '+serie.naam;
-    body.innerHTML=`${terug("kiezerStap('serie')", merk.series.length>1?'Andere serie':'Ander merk')}
+    body.innerHTML=`${terug(merk.series.length>1?"kiezerStap('serie')":"kiezerReset()", merk.series.length>1?'Andere serie':'Ander merk')}
       <div class="opt-grid opt-grid-list">${serie.modellen.map(m=>
         `<button class="opt opt-row" onclick="kiezerKies('model',${JSON.stringify(m).replace(/"/g,'&quot;')})">
           <span class="opt-row-in">
@@ -1948,11 +1992,31 @@ const KOLOMMEN={
           geluid:[7,8,9],knoppen:[10,11,12],netwerk:[13],water:[14],onbekend:[15],software:[16]}
 };
 function prijsBron(bron){
-  return bron==='iphone'?PRIJZEN_IPHONE:bron==='samsung'?PRIJZEN_SAMSUNG:bron==='vouw'?PRIJZEN_VOUW:null;
+  return bron==='iphone'?PRIJZEN_IPHONE:bron==='samsung'?PRIJZEN_SAMSUNG:bron==='vouw'?PRIJZEN_VOUW:bron==='ipad'?PRIJZEN_IPAD:null;
 }
 /* geeft de prijsregels voor een model en reparatie */
+/* iPad gebruikt benoemde velden in plaats van kolommen */
+const IPAD_VELDEN={
+  scherm:[['glas','Glas vervangen','t-soft'],['lcdGlas','LCD en glas vervangen','t-orig'],['scherm','Scherm vervangen','t-orig'],['home','Home button','t-refu']],
+  accu:[['accu','Accu / batterij','t-orig']],
+  laadconnector:[['laad','Laadconnector','t-refu']],
+  backglass:[],
+  cameravoor:[['camVoor','Camera voor','t-refu']],
+  cameraachter:[['camAchter','Camera achter','t-refu']],
+  geluid:[['speaker','Speaker','t-refu'],['micro','Microfoon','t-refu'],['audio','Audio jack','t-refu']],
+  knoppen:[['aanuit','Aan / uit knop','t-refu'],['volume','Volume knop','t-refu'],['tril','Trilfunctie','t-refu'],['home','Home button','t-refu']],
+  netwerk:[['wifi','Slecht / geen wifi','t-refu']],
+  water:[['water','Waterschade behandeling','t-refu']],
+  software:[['software','Software','t-refu']],
+  onbekend:[['onderzoek','Toestel onderzoeken','t-refu']]
+};
 function prijsRegels(bron,model,repId){
   const tabel=prijsBron(bron); if(!tabel)return [];
+  if(bron==='ipad'){
+    const d=tabel[model]; if(!d)return [];
+    const velden=IPAD_VELDEN[repId]||[];
+    return velden.filter(([k])=>d[k]!==undefined).map(([k,label,kl])=>({label,kl,waarde:d[k]}));
+  }
   const rij=tabel[model];
   if(rij==='aanvraag')return [{label:'Alle reparaties',kl:'t-orig',waarde:'aanvraag'}];
   if(!Array.isArray(rij))return [];
