@@ -1225,7 +1225,7 @@ const NL2EN={
 "Zeer goede service.":"Very good service",
 "Top.":"Top",
 "Google review":"Google review",
-"Welk merk heb je?":"Which brand do you have?","Welke serie?":"Which series?",
+"Welk merk heb je?":"Which brand do you have?","Welke serie?":"Which series?","Welke iPad heb je?":"Which iPad do you have?","Ander type":"Different type","iPad mini":"iPad mini","iPad Pro":"iPad Pro","iPad Air":"iPad Air",
 "In een paar stappen weet je de prijs en hoe lang het duurt.":"A few steps to the price and repair time.",
 "Ander merk":"Other brand","Andere serie":"Different series","prijs op aanvraag":"price on request",
 "Galaxy S":"Galaxy S","Galaxy A":"Galaxy A","Galaxy Note":"Galaxy Note","Galaxy J":"Galaxy J",
@@ -1756,7 +1756,13 @@ const PRIJZEN_IPAD={
 const CATALOGUS=[
  {id:'apple',naam:'Apple',icon:I.apple,series:[
    {id:'iphone',naam:'iPhone',bron:'iphone',modellen:Object.keys(PRIJZEN_IPHONE)},
-   {id:'ipad',naam:'iPad',bron:'ipad',modellen:Object.keys(PRIJZEN_IPAD)},
+   {id:'ipad',naam:'iPad',bron:'ipad',modellen:Object.keys(PRIJZEN_IPAD),
+    sub:[
+      {id:'pro',naam:'iPad Pro',test:m=>/^iPad Pro/.test(m)},
+      {id:'air',naam:'iPad Air',test:m=>/^iPad Air/.test(m)},
+      {id:'std',naam:'iPad',test:m=>/^iPad (\d|A16|20)/.test(m)},
+      {id:'mini',naam:'iPad mini',test:m=>/^iPad Mini/.test(m)}
+    ]},
    {id:'watch',naam:'Apple Watch',bron:null,modellen:['Apple Watch Ultra','Apple Watch Series','Apple Watch SE']}
  ]},
  {id:'samsung',naam:'Samsung',icon:I.samsung,series:[
@@ -1834,17 +1840,25 @@ function kiezerBlok(){
         <p class="checker-sub" id="checkerSub">In een paar stappen weet je de prijs en hoe lang het duurt.</p>
       </div>
       <ol class="checker-steps" id="checkerSteps" aria-hidden="true">
-        <li class="on">1</li><li>2</li><li>3</li><li>4</li>
+        <li class="on">1</li><li>2</li><li>3</li><li>4</li><li>5</li>
       </ol>
     </div>
     <div class="checker-body" id="checkerBody" role="group" aria-labelledby="checkerTitel"></div>
   </div>`;
 }
 
-let kiezer={merk:null,serie:null,model:null,rep:null};
+let kiezer={merk:null,serie:null,sub:null,model:null,rep:null};
 
 function kiezerBlokStappen(){
-  const st=!kiezer.merk?0:(!kiezer.serie?1:(!kiezer.model?2:(!kiezer.rep?3:4)));
+  const se=huidigSerie();
+  const heeftSub=!!(se&&se.sub);
+  let st;
+  if(!kiezer.merk)st=0;
+  else if(!kiezer.serie)st=1;
+  else if(heeftSub&&!kiezer.sub)st=2;
+  else if(!kiezer.model)st=heeftSub?3:2;
+  else if(!kiezer.rep)st=heeftSub?4:3;
+  else st=5;
   const lis=[...document.querySelectorAll('#checkerSteps li')];
   lis.forEach((li,i)=>li.className=i<st?'done':(i===st?'on':''));
 }
@@ -1888,12 +1902,26 @@ function kiezerRender(){
   }
   const serie=huidigSerie();
 
+  /* tussenstap: type binnen de serie (bv iPad Pro, Air, mini) */
+  if(serie.sub&&!kiezer.sub){
+    titel.textContent='Welke iPad heb je?';
+    sub.textContent=merk.naam+' '+serie.naam;
+    body.innerHTML=`${terug("kiezerStap('serie')","Andere serie")}
+      <div class="opt-grid">${serie.sub.map(sb=>
+        `<button class="opt" onclick="kiezerKies('sub','${sb.id}')"><span class="opt-ic">${I.tablet}</span><span>${sb.naam}</span></button>`).join('')}</div>`;
+    return;
+  }
+  const subserie=serie.sub?serie.sub.find(x=>x.id===kiezer.sub):null;
+  const modellen=subserie?serie.modellen.filter(subserie.test):serie.modellen;
+
   /* stap 3: model */
   if(!kiezer.model){
     titel.textContent='Welk model?';
     sub.textContent=merk.naam+' '+serie.naam;
-    body.innerHTML=`${terug(merk.series.length>1?"kiezerStap('serie')":"kiezerReset()", merk.series.length>1?'Andere serie':'Ander merk')}
-      <div class="opt-grid opt-grid-list">${serie.modellen.map(m=>
+    const terugNaar = serie.sub?"kiezerStap('sub')":(merk.series.length>1?"kiezerStap('serie')":"kiezerReset()");
+    const terugLabel = serie.sub?'Ander type':(merk.series.length>1?'Andere serie':'Ander merk');
+    body.innerHTML=`${terug(terugNaar,terugLabel)}
+      <div class="opt-grid opt-grid-list">${modellen.map(m=>
         `<button class="opt opt-row" onclick="kiezerKies('model',${JSON.stringify(m).replace(/"/g,'&quot;')})">
           <span class="opt-row-in">
             ${serie.bron?`<img class="opt-thumb" src="img/toestellen/${modelSlug(m)}.png" alt="" width="34" height="44" decoding="async">`:''}
@@ -1956,18 +1984,20 @@ function kiezerRender(){
 function kiezerKlaar(){const b=document.getElementById('checkerBody');if(b)vertaalDOM(b.parentElement);}
 function kiezerKies(veld,val){
   kiezer[veld]=val;
-  if(veld==='merk'){kiezer.serie=null;kiezer.model=null;kiezer.rep=null;}
-  if(veld==='serie'){kiezer.model=null;kiezer.rep=null;}
+  if(veld==='merk'){kiezer.serie=null;kiezer.sub=null;kiezer.model=null;kiezer.rep=null;}
+  if(veld==='serie'){kiezer.sub=null;kiezer.model=null;kiezer.rep=null;}
+  if(veld==='sub'){kiezer.model=null;kiezer.rep=null;}
   if(veld==='model'){kiezer.rep=null;}
   kiezerRender();kiezerKlaar();
 }
 function kiezerStap(veld){
   kiezer[veld]=null;
-  if(veld==='serie'){kiezer.model=null;kiezer.rep=null;}
+  if(veld==='serie'){kiezer.sub=null;kiezer.model=null;kiezer.rep=null;}
+  if(veld==='sub'){kiezer.model=null;kiezer.rep=null;}
   if(veld==='model'){kiezer.rep=null;}
   kiezerRender();kiezerKlaar();
 }
-function kiezerReset(){kiezer={merk:null,serie:null,model:null,rep:null};kiezerRender();kiezerKlaar();}
+function kiezerReset(){kiezer={merk:null,serie:null,sub:null,model:null,rep:null};kiezerRender();kiezerKlaar();}
 
 
 /* ---- Prijsopzoeking per merk ----
