@@ -1,0 +1,13 @@
+{
+  "name": "phone-repair-house",
+  "version": "1.0.0",
+  "description": "Phone Repair House - demo website (single-file SPA) met eenvoudige Node-server.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true
+}

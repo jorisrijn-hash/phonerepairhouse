@@ -1,0 +1,10 @@
+# Netlify: dit is een statische site, geen build nodig.
+[build]
+  publish = "public"
+  command = "echo 'Statische site, geen build-stap nodig'"
+
+# Alle paden vallen terug op index.html (de site gebruikt client-side routing)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

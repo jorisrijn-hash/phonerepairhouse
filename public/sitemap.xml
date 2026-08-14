@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Let op: deze site draait nu als single-page demo met #-routes.
+  Zoekmachines indexeren #-URL's niet apart. Bij livegang omzetten naar
+  echte paden (bijv. /reparaties/iphone-reparatie) en dan deze sitemap gebruiken.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.phonerepairhouse2022.nl/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/prijzen</loc><priority>0.9</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/reparaties</loc><priority>0.9</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/reparaties/iphone-reparatie</loc><priority>0.8</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/reparaties/samsung-reparatie</loc><priority>0.8</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/reparaties/scherm-reparatie</loc><priority>0.8</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/reparaties/batterij-vervangen</loc><priority>0.8</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/reparaties/waterschade-herstel</loc><priority>0.8</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/zakelijk</loc><priority>0.6</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/refurbished</loc><priority>0.7</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/webshop</loc><priority>0.6</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/over-ons</loc><priority>0.5</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/reviews</loc><priority>0.5</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/faq</loc><priority>0.5</priority></url>
+  <url><loc>https://www.phonerepairhouse2022.nl/contact</loc><priority>0.9</priority></url>
+</urlset>
