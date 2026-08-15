@@ -746,6 +746,92 @@ ul{margin:0;padding:0;list-style:none}
 .opt-grid-list{max-height:420px;overflow-y:auto;padding-right:4px}
 @media(max-width:600px){.pt-prijs{font-size:16px}.opt-grid-list{max-height:340px}}
 
+/* ---------- donker thema ---------- */
+html[data-thema="donker"]{
+  --green:#22C55E; --green-700:#34D27A; --green-800:#4ADE80;
+  --green-tint:#16261C; --green-tint-2:#1E3527;
+  --ink:#EEF3EF; --ink-2:#AEBAB3; --ink-3:#8A968F;
+  --paper:#0D1210; --paper-2:#141B18; --paper-3:#1B2320;
+  --line:#242E29; --line-2:#33403A;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.5);
+  --shadow-md:0 10px 30px -12px rgba(0,0,0,.65), 0 4px 10px -6px rgba(0,0,0,.5);
+  --shadow-lg:0 30px 60px -22px rgba(0,0,0,.75), 0 10px 24px -12px rgba(0,0,0,.55);
+  color-scheme:dark;
+}
+html[data-thema="donker"] .header{background:rgba(13,18,16,.85)}
+html[data-thema="donker"] .btn-ghost{background:var(--paper-2);color:var(--ink)}
+html[data-thema="donker"] .btn-dark{background:var(--paper-3);color:var(--ink)}
+html[data-thema="donker"] .card,html[data-thema="donker"] .review,
+html[data-thema="donker"] .contact-card,html[data-thema="donker"] .checker,
+html[data-thema="donker"] .prijslijst,html[data-thema="donker"] .faq-item,
+html[data-thema="donker"] .opt,html[data-thema="donker"] .prod,
+html[data-thema="donker"] .g-badge,html[data-thema="donker"] .float-chip,
+html[data-thema="donker"] .legend,html[data-thema="donker"] .drop{background:var(--paper-2)}
+html[data-thema="donker"] .feat{background:var(--paper-3)}
+html[data-thema="donker"] .field input,html[data-thema="donker"] .field select,
+html[data-thema="donker"] .field textarea,html[data-thema="donker"] .pl-kop select,
+html[data-thema="donker"] .search input,html[data-thema="donker"] .chat-foot input{
+  background:var(--paper-3);color:var(--ink);border-color:var(--line-2)}
+html[data-thema="donker"] .process{background:#080C0A}
+html[data-thema="donker"] .footer{background:#080C0A}
+html[data-thema="donker"] .msg.bot{background:var(--paper-3);border-color:var(--line)}
+html[data-thema="donker"] .chat-body{background:var(--paper)}
+html[data-thema="donker"] .chat-quick,html[data-thema="donker"] .chat-foot{background:var(--paper-2)}
+html[data-thema="donker"] .sp-hero,html[data-thema="donker"] .trustbar{background:var(--paper-2)}
+html[data-thema="donker"] .hero::before{background:
+  radial-gradient(60% 50% at 78% 18%,#14241B 0%,transparent 60%),
+  radial-gradient(50% 60% at 12% 90%,#111A15 0%,transparent 55%)}
+html[data-thema="donker"] .hero-scrim{background:linear-gradient(100deg,
+  rgba(13,18,16,0) 30%,rgba(13,18,16,.85) 47%,rgba(13,18,16,.45) 60%,rgba(13,18,16,0) 74%)}
+html[data-thema="donker"] .actionbar .ab-call{background:var(--paper-2);border-color:var(--line-2);color:var(--ink)}
+html[data-thema="donker"] .about-img{background:linear-gradient(160deg,var(--paper-3),var(--paper-2))}
+html[data-thema="donker"] .map-embed{background:var(--paper-2)}
+html[data-thema="donker"] #preloader{background:var(--paper)}
+html[data-thema="donker"] .lang-switch{background:var(--paper-2)}
+html[data-thema="donker"] .lang-switch button.on{background:var(--ink);color:var(--paper)}
+html[data-thema="donker"] .pl-tabel tbody tr:hover,html[data-thema="donker"] .row:hover{background:var(--paper-3)}
+
+/* thema-schakelaar in de footer */
+.thema-schakelaar{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:5px;margin-top:16px}
+.thema-schakelaar button{display:inline-flex;align-items:center;gap:6px;font-family:Sora;font-weight:600;
+  font-size:12px;color:rgba(255,255,255,.65);padding:7px 12px;border-radius:999px;transition:.18s}
+.thema-schakelaar button.on{background:#fff;color:var(--ink-2)}
+html[data-thema="donker"] .thema-schakelaar button.on{background:var(--paper-3);color:var(--ink)}
+.thema-schakelaar svg{width:14px;height:14px}
+
+/* keuzevenster bij eerste bezoek */
+.thema-pop{position:fixed;inset:0;z-index:9998;display:grid;place-items:center;padding:20px;
+  background:rgba(11,15,12,.55);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:.25s}
+.thema-pop.open{opacity:1;visibility:visible}
+.thema-kaart{background:var(--paper);border:1px solid var(--line);border-radius:22px;
+  box-shadow:var(--shadow-lg);padding:28px;max-width:400px;width:100%;text-align:center;
+  transform:translateY(12px) scale(.97);transition:.28s var(--ease)}
+.thema-pop.open .thema-kaart{transform:none}
+.thema-kaart h3{font-size:21px;margin-bottom:8px}
+.thema-kaart p{color:var(--ink-2);font-size:14.5px;margin-bottom:20px}
+.thema-keuzes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.thema-keuze{border:1.5px solid var(--line-2);border-radius:16px;padding:16px 12px;background:var(--paper);
+  font-family:Sora;font-weight:600;font-size:14px;color:var(--ink);transition:.18s}
+.thema-keuze:hover{border-color:var(--green);background:var(--green-tint)}
+.thema-voorbeeld{height:44px;border-radius:10px;margin-bottom:10px;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;gap:5px}
+.tv-licht{background:#fff}.tv-donker{background:#0D1210;border-color:#33403A}
+.thema-voorbeeld i{width:22px;height:6px;border-radius:99px;display:block}
+.tv-licht i:first-child{background:#0B0F0C}.tv-licht i:last-child{background:#16A34A}
+.tv-donker i:first-child{background:#EEF3EF}.tv-donker i:last-child{background:#22C55E}
+
+/* cookiemelding */
+.cookiebalk{position:fixed;left:16px;right:16px;bottom:16px;z-index:9997;max-width:520px;margin:0 auto;
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-lg);
+  padding:18px 20px;transform:translateY(20px);opacity:0;visibility:hidden;transition:.28s var(--ease)}
+.cookiebalk.open{transform:none;opacity:1;visibility:visible}
+.cookiebalk p{font-size:13.5px;color:var(--ink-2);margin-bottom:14px}
+.cookiebalk b{color:var(--ink)}
+.cookie-knoppen{display:flex;gap:8px;flex-wrap:wrap}
+.cookie-knoppen .btn{flex:1;min-width:120px;padding:11px 16px;font-size:14px}
+@media(max-width:600px){.cookiebalk{bottom:84px}}
+
 /* ---------- taalschakelaar ---------- */
 .lang-switch{display:inline-flex;align-items:center;border:1px solid var(--line2);border-radius:999px;
   overflow:hidden;background:#fff;flex:0 0 auto}
@@ -928,6 +1014,14 @@ ul{margin:0;padding:0;list-style:none}
         </ul>
       </div>
     </div>
+    <div class="thema-schakelaar" role="group" aria-label="Thema kiezen">
+      <button data-thema-knop="licht" onclick="kiesThema('licht',true)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Licht
+      </button>
+      <button data-thema-knop="donker" onclick="kiesThema('donker',true)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>Donker
+      </button>
+    </div>
     <div class="foot-bottom">
       <span>© 2026 Phone Repair House · Katwijk aan Zee · Alle rechten voorbehouden</span>
       <span>Website door <b style="color:#7fe3a0">jorisvrr/webdev</b> <span class="tiles"><i style="background:var(--t-red)"></i><i style="background:var(--t-orange)"></i><i style="background:var(--t-green)"></i><i style="background:var(--t-blue)"></i></span></span>
@@ -950,6 +1044,31 @@ ul{margin:0;padding:0;list-style:none}
     <span>Prijzen bekijken</span>
   </a>
 </nav>
+
+<!-- THEMAKEUZE BIJ EERSTE BEZOEK -->
+<div class="thema-pop" id="themaPop" role="dialog" aria-modal="true" aria-labelledby="themaTitel">
+  <div class="thema-kaart">
+    <h3 id="themaTitel">Hoe wil je de site bekijken?</h3>
+    <p>Kies wat het prettigst leest. Je kunt dit onderaan de pagina altijd wijzigen.</p>
+    <div class="thema-keuzes">
+      <button class="thema-keuze" onclick="kiesThema('licht',true)">
+        <span class="thema-voorbeeld tv-licht"><i></i><i></i></span>Licht
+      </button>
+      <button class="thema-keuze" onclick="kiesThema('donker',true)">
+        <span class="thema-voorbeeld tv-donker"><i></i><i></i></span>Donker
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- COOKIEMELDING -->
+<div class="cookiebalk" id="cookiebalk" role="region" aria-label="Cookiemelding">
+  <p><b>Deze site gebruikt geen trackingcookies.</b> We bewaren alleen je taal- en themakeuze op je eigen apparaat, zodat de site er de volgende keer hetzelfde uitziet.</p>
+  <div class="cookie-knoppen">
+    <button class="btn btn-primary" onclick="cookieKeuze(true)">Prima</button>
+    <button class="btn btn-ghost" onclick="cookieKeuze(false)">Niets bewaren</button>
+  </div>
+</div>
 
 <!-- FLOATING ACTIONS -->
 <div class="floaters">
@@ -1249,6 +1368,15 @@ const NL2EN={
 "Glas vervangen":"Glass replacement","LCD en glas vervangen":"LCD and glass replacement",
 "Scherm vervangen":"Screen replacement","Home button":"Home button","Audio jack":"Audio jack",
 "Slecht / geen wifi":"Poor / no wifi","Toestel onderzoeken":"Device inspection","Camera achter":"Rear camera","Camera voor":"Front camera",
+"Google Pixel":"Google Pixel","Pixel":"Pixel","Pixel Fold":"Pixel Fold","OnePlus":"OnePlus","Huawei":"Huawei",
+"Galaxy Tab S":"Galaxy Tab S","Galaxy Tab A":"Galaxy Tab A","OEM":"OEM","Origineel":"Original",
+"Ander Huawei-model":"Other Huawei model","Ander OnePlus-model":"Other OnePlus model",
+"Hoe wil je de site bekijken?":"How would you like to view the site?",
+"Kies wat het prettigst leest. Je kunt dit onderaan de pagina altijd wijzigen.":"Pick whichever reads best. You can change this at the bottom of the page any time.",
+"Licht":"Light","Donker":"Dark","Thema kiezen":"Choose theme","Cookiemelding":"Cookie notice",
+"Deze site gebruikt geen trackingcookies.":"This site uses no tracking cookies.",
+"We bewaren alleen je taal- en themakeuze op je eigen apparaat, zodat de site er de volgende keer hetzelfde uitziet.":"We only store your language and theme choice on your own device, so the site looks the same next time.",
+"Prima":"That's fine","Niets bewaren":"Store nothing",
 "Vraag het even via WhatsApp":"Just ask via WhatsApp",
 "Richtprijzen. De exacte prijs hoor je altijd voordat we aan je toestel beginnen. Staat jouw model er niet bij?":"Indicative prices. You always hear the exact price before we start on your phone. Model not listed?",
 "Prijzen per model":"Prices per model","Alle reparatieprijzen op een rij":"All repair prices at a glance",
@@ -1749,6 +1877,104 @@ const PRIJZEN_IPAD={
 };
 
 /* ============================================================
+   PRIJZEN GOOGLE PIXEL (aug 2026)
+   [schermOrigineel, schermOEM, accu, laad, backglass, camVoor,
+    camAchter, oorspeaker, speaker, micro, aanuit, volume, tril,
+    netwerk, water, onderzoek, software, moederbord]
+   ============================================================ */
+const PRIJZEN_GOOGLE={
+"Google Pixel 10 Pro XL":[299,209,99,115,155,'aanvraag','aanvraag',85,85,'aanvraag','aanvraag','aanvraag','aanvraag','aanvraag',49,15,35,135],
+"Google Pixel 10 Pro":[280,155,95,115,155,'aanvraag','aanvraag',85,85,85,95,95,85,109,49,15,35,135],
+"Google Pixel 10":[209,155,79,95,135,'aanvraag','aanvraag',79,79,79,85,85,79,95,49,15,35,135],
+"Google Pixel 9 Pro XL":[319,209,85,85,155,135,429,75,75,79,85,85,75,85,49,15,35,135],
+"Google Pixel 9 Pro":[215,129,75,79,139,125,450,75,75,75,95,79,75,75,49,15,35,135],
+"Google Pixel 9a":[175,null,75,89,75,79,165,65,65,69,69,69,65,69,49,15,35,135],
+"Google Pixel 9":[235,125,75,79,75,69,95,69,69,85,75,75,65,69,49,15,35,135],
+"Google Pixel 8 Pro":[345,199,69,95,85,65,89,69,69,75,65,65,65,69,49,15,35,135],
+"Google Pixel 8a":[179,null,75,89,85,75,75,65,65,75,69,69,65,69,49,15,35,135],
+"Google Pixel 8":[215,139,75,89,85,65,85,69,69,69,65,65,65,65,49,15,35,135],
+"Google Pixel 7 Pro":[329,209,69,89,69,65,95,65,65,65,65,65,65,69,49,15,35,135],
+"Google Pixel 7a":[185,null,69,89,95,65,89,69,69,69,65,65,65,69,49,15,35,135],
+"Google Pixel 7":[199,null,69,85,69,65,75,65,75,69,65,65,65,65,49,15,35,135],
+"Google Pixel 6 Pro":[299,149,69,85,69,65,85,69,65,65,65,65,59,65,49,15,35,135],
+"Google Pixel 6a":[175,null,65,75,85,65,89,65,65,65,65,65,59,65,49,15,35,135],
+"Google Pixel 6":[179,null,65,75,69,65,75,65,65,65,65,65,59,69,49,15,35,135]
+};
+
+/* Vouwbare Pixels: binnen- en buitenscherm apart
+   [binnenscherm, buitenscherm, accu, laad, backglass, camVoor, camAchter,
+    oorspeaker, speaker, micro, aanuit, volume, tril, netwerk, water,
+    onderzoek, software, moederbord] */
+const PRIJZEN_GOOGLE_VOUW={
+"Google Pixel 10 Pro Fold":['aanvraag',229,159,'aanvraag','aanvraag','aanvraag','aanvraag','aanvraag','aanvraag','aanvraag','aanvraag','aanvraag','aanvraag','aanvraag',49,15,35,135],
+"Google Pixel 9 Pro Fold":[850,175,139,115,129,109,'aanvraag',75,75,79,99,85,75,85,49,15,35,135]
+};
+
+/* ============================================================
+   PRIJZEN SAMSUNG GALAXY TAB
+   [schermOrigineel, schermOEM, accu, laad, camVoor, camAchter,
+    speaker, micro, aanuit, volume, tril, wifi, water, onderzoek,
+    software, moederbord]
+   ============================================================ */
+const PRIJZEN_TAB_S={
+"Galaxy Tab S9 Plus 12.4":[389,null,105,109,85,119,109,85,85,85,85,95,49,15,25,135],
+"Galaxy Tab S9 11":[289,null,109,109,85,119,99,85,85,85,85,95,49,15,25,135],
+"Galaxy Tab S9 FE 10.9":[249,125,89,99,85,145,109,89,79,85,85,95,49,15,25,135],
+"Galaxy Tab S8 Ultra 14.6":[495,null,135,105,85,115,99,85,85,85,85,95,49,15,25,135],
+"Galaxy Tab S8 Plus 12.4":[369,null,109,105,75,115,99,89,85,85,85,95,49,15,25,135],
+"Galaxy Tab S8 11":[259,125,89,105,75,115,99,85,85,85,85,89,49,15,25,135],
+"Galaxy Tab S7 FE 12.4":[259,135,109,99,69,105,95,85,85,85,85,89,49,15,25,135],
+"Galaxy Tab S7 11":[219,129,99,99,75,115,99,85,85,85,85,89,49,15,25,135],
+"Galaxy Tab S6 Lite 10.4":[179,135,95,99,69,105,99,85,85,85,85,89,49,15,25,135],
+"Galaxy Tab S6 10.5":[299,null,89,95,75,115,79,79,85,85,85,89,49,15,25,135],
+"Galaxy Tab S5e 10.5":[259,229,89,95,75,105,85,79,85,85,79,89,49,15,25,135],
+"Galaxy Tab S4 10.5":[275,225,89,95,75,99,85,79,79,79,79,85,49,15,25,135],
+"Galaxy Tab S3":[205,159,89,89,59,89,75,75,75,75,75,75,49,15,25,135],
+"Galaxy Tab S2":[149,null,89,95,69,89,75,75,75,75,75,75,49,15,25,135]
+};
+const PRIJZEN_TAB_A={
+"Galaxy Tab A11 Plus":[139,99,95,95,69,99,95,85,85,85,85,89,49,15,25,135],
+"Galaxy Tab A11":[139,null,109,99,65,99,89,85,85,85,85,89,49,15,25,135],
+"Galaxy Tab A9 Plus 11":[149,119,89,99,65,105,79,85,79,79,79,85,49,15,25,135],
+"Galaxy Tab A9 8.7":[149,115,85,95,75,105,79,85,85,85,85,89,49,15,25,135],
+"Galaxy Tab A8 10.5":[185,119,89,95,65,99,79,85,79,79,79,85,49,15,25,135],
+"Galaxy Tab A7 10.4":[199,119,89,95,65,89,79,85,79,79,79,85,49,15,25,135],
+"Galaxy Tab A7 Lite 8.7":[129,115,85,95,65,95,79,85,79,79,79,85,49,15,25,135],
+"Galaxy Tab A 10.1 T580":'aanvraag',
+"Galaxy Tab A 10.1 T510":'aanvraag',
+"Galaxy Tab A T550":'aanvraag'
+};
+
+/* ============================================================
+   MERKEN ZONDER GEPUBLICEERDE TARIEVEN
+   Deze staan in de prijslijst zonder bedragen. We tonen ze
+   eerlijk als 'prijs op aanvraag' in plaats van te gokken.
+   ============================================================ */
+const MODELLEN_HUAWEI=[
+ "Huawei P40 Pro","Huawei P40","Huawei P40 Lite",
+ "Huawei P30 Pro","Huawei P30","Huawei P30 Lite",
+ "Huawei P20 Pro","Huawei P20","Huawei P20 Lite",
+ "Huawei Mate 20 Pro","Huawei Mate 20 Lite","Huawei Mate 10 Pro",
+ "Huawei P Smart","Huawei Nova 5T","Ander Huawei-model"
+];
+const MODELLEN_ONEPLUS=[
+ "OnePlus 7 Pro","OnePlus 7T Pro","OnePlus 7T","OnePlus 7",
+ "OnePlus 6T","OnePlus 6","OnePlus 5T","OnePlus 5","Ander OnePlus-model"
+];
+const MODELLEN_WATCH=[
+ "Apple Watch Ultra Series 49mm",
+ "Apple Watch 9 45mm","Apple Watch 9 41mm",
+ "Apple Watch 8 45mm","Apple Watch 8 41mm",
+ "Apple Watch 7 45mm","Apple Watch 7 41mm",
+ "Apple Watch SE (2022) 44mm","Apple Watch SE (2022) 40mm",
+ "Apple Watch 6 44mm","Apple Watch 6 40mm",
+ "Apple Watch 5 44mm","Apple Watch 5 40mm",
+ "Apple Watch 4 44mm","Apple Watch 4 40mm",
+ "Apple Watch 3 42mm","Apple Watch 3 38mm",
+ "Apple Watch 2 42mm","Apple Watch 2 38mm"
+];
+
+/* ============================================================
    CATALOGUS: merk, dan serie, dan model.
    Series zonder eigen prijslijst staan op 'aanvraag' totdat de
    tarieven zijn ingevoerd. Ze blijven wel gewoon kiesbaar.
@@ -1763,7 +1989,7 @@ const CATALOGUS=[
       {id:'std',naam:'iPad',test:m=>/^iPad (\d|A16|20)/.test(m)},
       {id:'mini',naam:'iPad mini',test:m=>/^iPad Mini/.test(m)}
     ]},
-   {id:'watch',naam:'Apple Watch',bron:null,modellen:['Apple Watch Ultra','Apple Watch Series','Apple Watch SE']}
+   {id:'watch',naam:'Apple Watch',bron:null,modellen:MODELLEN_WATCH}
  ]},
  {id:'samsung',naam:'Samsung',icon:I.samsung,series:[
    {id:'gal-s',naam:'Galaxy S',bron:'samsung',
@@ -1775,18 +2001,22 @@ const CATALOGUS=[
    {id:'gal-j',naam:'Galaxy J',bron:'samsung',
     modellen:Object.keys(PRIJZEN_SAMSUNG).filter(m=>/^Samsung J/.test(m))},
    {id:'vouw',naam:'Galaxy Z Flip en Fold',bron:'vouw',modellen:Object.keys(PRIJZEN_VOUW)},
-   {id:'tab',naam:'Galaxy Tab',bron:null,modellen:['Galaxy Tab S-serie','Galaxy Tab A-serie']}
+   {id:'tab-s',naam:'Galaxy Tab S',bron:'tabs',modellen:Object.keys(PRIJZEN_TAB_S)},
+   {id:'tab-a',naam:'Galaxy Tab A',bron:'taba',modellen:Object.keys(PRIJZEN_TAB_A)}
+ ]},
+ {id:'google',naam:'Google Pixel',icon:I.phone,series:[
+   {id:'pixel',naam:'Pixel',bron:'google',modellen:Object.keys(PRIJZEN_GOOGLE)},
+   {id:'pixel-fold',naam:'Pixel Fold',bron:'googlevouw',modellen:Object.keys(PRIJZEN_GOOGLE_VOUW)}
  ]},
  {id:'huawei',naam:'Huawei',icon:I.phone,series:[
-   {id:'huawei-p',naam:'Huawei',bron:null,modellen:['P-serie','Mate-serie','Nova-serie','Ander Huawei-model']}
+   {id:'huawei',naam:'Huawei',bron:null,modellen:MODELLEN_HUAWEI}
  ]},
- {id:'anders',naam:'Ander merk',icon:I.refresh,series:[
-   {id:'overig',naam:'Ander merk',bron:null,
-    modellen:['Google Pixel','Xiaomi','OnePlus','Oppo','Motorola','Nokia','Ander model']}
+ {id:'oneplus',naam:'OnePlus',icon:I.phone,series:[
+   {id:'oneplus',naam:'OnePlus',bron:null,modellen:MODELLEN_ONEPLUS}
  ]}
 ];
-/* Tablets krijgen een eigen ingang in de kiezer */
-const TABLET_SERIES=['ipad','tab'];
+/* Tablets krijgen een tablet-icoon in de keuzelijst */
+const TABLET_SERIES=['ipad','tab-s','tab-a'];
 
 // [richtprijs klasse1, klasse2, klasse3], duur, omschrijving
 const REPARATIES=[
@@ -2015,6 +2245,21 @@ const KOLOMMEN={
           laadconnector:[2],backglass:[3],cameravoor:[4],
           cameraachter:[5],caLabels:['Origineel'],caKl:['t-orig'],
           geluid:[6,7,8],knoppen:[9,10,11],netwerk:[12],water:[13],onbekend:[14],software:[15]},
+  google:{scherm:[0,1],schermLabels:['Origineel','OEM'],schermKl:['t-orig','t-soft'],
+          accu:[2],accuLabels:['Origineel'],accuKl:['t-orig'],
+          laadconnector:[3],backglass:[4],cameravoor:[5],
+          cameraachter:[6],caLabels:['Origineel'],caKl:['t-orig'],
+          geluid:[7,8,9],knoppen:[10,11,12],netwerk:[13],water:[14],onbekend:[15],software:[16]},
+  googlevouw:{scherm:[0,1],schermLabels:['Binnenscherm','Buitenscherm'],schermKl:['t-orig','t-refu'],
+          accu:[2],accuLabels:['Origineel'],accuKl:['t-orig'],
+          laadconnector:[3],backglass:[4],cameravoor:[5],
+          cameraachter:[6],caLabels:['Origineel'],caKl:['t-orig'],
+          geluid:[7,8,9],knoppen:[10,11,12],netwerk:[13],water:[14],onbekend:[15],software:[16]},
+  tabs:{scherm:[0,1],schermLabels:['Origineel','OEM'],schermKl:['t-orig','t-soft'],
+          accu:[2],accuLabels:['Origineel'],accuKl:['t-orig'],
+          laadconnector:[3],backglass:[],cameravoor:[4],
+          cameraachter:[5],caLabels:['Origineel'],caKl:['t-orig'],
+          geluid:[6,7],knoppen:[8,9,10],netwerk:[11],water:[12],onbekend:[13],software:[14]},
   vouw:{scherm:[0,1],schermLabels:['Binnenscherm','Buitenscherm'],schermKl:['t-orig','t-refu'],
           accu:[2],accuLabels:['Origineel'],accuKl:['t-orig'],
           laadconnector:[3],backglass:[4],cameravoor:[5],
@@ -2022,7 +2267,7 @@ const KOLOMMEN={
           geluid:[7,8,9],knoppen:[10,11,12],netwerk:[13],water:[14],onbekend:[15],software:[16]}
 };
 function prijsBron(bron){
-  return bron==='iphone'?PRIJZEN_IPHONE:bron==='samsung'?PRIJZEN_SAMSUNG:bron==='vouw'?PRIJZEN_VOUW:bron==='ipad'?PRIJZEN_IPAD:null;
+  return bron==='iphone'?PRIJZEN_IPHONE:bron==='samsung'?PRIJZEN_SAMSUNG:bron==='vouw'?PRIJZEN_VOUW:bron==='ipad'?PRIJZEN_IPAD:bron==='google'?PRIJZEN_GOOGLE:bron==='googlevouw'?PRIJZEN_GOOGLE_VOUW:bron==='tabs'?PRIJZEN_TAB_S:bron==='taba'?PRIJZEN_TAB_A:null;
 }
 /* geeft de prijsregels voor een model en reparatie */
 /* iPad gebruikt benoemde velden in plaats van kolommen */
@@ -2042,6 +2287,8 @@ const IPAD_VELDEN={
 };
 function prijsRegels(bron,model,repId){
   const tabel=prijsBron(bron); if(!tabel)return [];
+  // Tab A gebruikt hetzelfde kolomschema als Tab S
+  const schema=(bron==='taba')?'tabs':bron;
   if(bron==='ipad'){
     const d=tabel[model]; if(!d)return [];
     const velden=IPAD_VELDEN[repId]||[];
@@ -2050,7 +2297,7 @@ function prijsRegels(bron,model,repId){
   const rij=tabel[model];
   if(rij==='aanvraag')return [{label:'Alle reparaties',kl:'t-orig',waarde:'aanvraag'}];
   if(!Array.isArray(rij))return [];
-  const k=KOLOMMEN[bron]; if(!k)return [];
+  const k=KOLOMMEN[schema]; if(!k)return [];
   const idx=k[repId]||[];
   const labels = repId==='scherm'?k.schermLabels : repId==='accu'?k.accuLabels
                : repId==='cameraachter'?k.caLabels
@@ -3018,6 +3265,76 @@ document.getElementById('chatClose').addEventListener('click',()=>toggleChat(fal
 document.getElementById('chatSend').addEventListener('click',()=>sendChat(document.getElementById('chatInput').value));
 document.getElementById('chatInput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat(e.target.value);});
 
+
+/* ============================================================
+   THEMA EN COOKIEMELDING
+   Voorkeuren staan alleen op het apparaat van de bezoeker.
+   Als opslag niet mag of niet werkt, blijft de site gewoon werken.
+   ============================================================ */
+let mag_bewaren=true;
+function bewaarLokaal(sleutel,waarde){
+  if(!mag_bewaren)return;
+  try{localStorage.setItem(sleutel,waarde);}catch(e){}
+}
+function leesLokaal(sleutel){
+  try{return localStorage.getItem(sleutel);}catch(e){return null;}
+}
+function pasThemaToe(thema){
+  document.documentElement.setAttribute('data-thema',thema);
+  document.querySelectorAll('[data-thema-knop]').forEach(b=>
+    b.classList.toggle('on',b.dataset.themaKnop===thema));
+  const meta=document.querySelector('meta[name="theme-color"]');
+  if(meta)meta.content = thema==='donker' ? '#0D1210' : '#16A34A';
+}
+function kiesThema(thema,bewaren){
+  pasThemaToe(thema);
+  if(bewaren){bewaarLokaal('prh-thema',thema);sluitThemaPop();}
+}
+function sluitThemaPop(){
+  const el=document.getElementById('themaPop');
+  if(el)el.classList.remove('open');
+  bewaarLokaal('prh-thema-gevraagd','1');
+  setTimeout(toonCookiebalk,400);
+}
+function cookieKeuze(akkoord){
+  const el=document.getElementById('cookiebalk');
+  if(el)el.classList.remove('open');
+  if(akkoord){
+    mag_bewaren=true;
+    bewaarLokaal('prh-cookies','ja');
+    bewaarLokaal('prh-thema',document.documentElement.getAttribute('data-thema')||'licht');
+  }else{
+    mag_bewaren=false;
+    try{localStorage.removeItem('prh-thema');localStorage.removeItem('prh-thema-gevraagd');}catch(e){}
+  }
+}
+function toonCookiebalk(){
+  if(leesLokaal('prh-cookies'))return;
+  const el=document.getElementById('cookiebalk');
+  if(el)el.classList.add('open');
+}
+function startThema(){
+  const bewaard=leesLokaal('prh-thema');
+  const systeem=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+  pasThemaToe(bewaard || (systeem?'donker':'licht'));
+  // keuzevenster alleen bij het allereerste bezoek
+  if(!bewaard && !leesLokaal('prh-thema-gevraagd')){
+    setTimeout(()=>{
+      const el=document.getElementById('themaPop');
+      if(el){el.classList.add('open');
+        const eerste=el.querySelector('.thema-keuze'); if(eerste)eerste.focus();}
+    },900);
+  }else{
+    setTimeout(toonCookiebalk,900);
+  }
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    const el=document.getElementById('themaPop');
+    if(el&&el.classList.contains('open'))sluitThemaPop();
+  }
+});
+
 /* ---- preloader / boot animation ---- */
 function hidePreloader(){
   const pl=document.getElementById('preloader');
@@ -3041,6 +3358,7 @@ function setHeroOffset(){
 window.addEventListener('resize',setHeroOffset);
 window.addEventListener('load',setHeroOffset);
 
+startThema();
 fillStatic();
 injectFaqSchema();
 setHeroOffset();
